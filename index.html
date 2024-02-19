@@ -1,58 +1,99 @@
-<html>
-    <head>
-        <title> Netflix</title>
-        <link rel="stylesheet"href="index.css">
-        <style>
-            p{
-    color: blue;
-}
-h1{
-    color: red;
-}
-/* by using id we can diffrently identify the same tag and color it*/
-#testing1{
-    color: aqua;
-}
-#testing2{
-    color: green;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-.para1{
-    color: black;
-}
-.para2{
-    color:blueviolet;
-}
-        </style>
-    </head>
-    <body>
-        <h1 id="testing1">Text1 </h1>
-        <h1 id="testing2">Text2 </h1>
-        <h2>Text </h2>
-        <h3>Text </h3>
-        <h4 style="color: brown;">Text </h4>
-        <p class="para1">ugugeu huhfuh jhfuekh djheh jhehf edjhehf <br>ejfheihf fejhfh</p>
-        <p class="para2">ugugeu huhfuh jhfuekh djheh jhehf edjhehf <br>ejfheihf fejhfh</p>
-        <a href="https://www.wikipedia.org/"> Wikipedia </a>  
-        <img height="400px" width="400 px" src="https://en.wikipedia.org/wiki/Main_Page#/media/File:Mars_helicopter_on_sol_46.png">
-        <!--lists-->
-        <ul>
-            <li>Intem 1</li>
-            <li>Item 2</li>
-        </ul> 
-        <ol>
-            <li>Intem 1</li>
-            <li>Item 2</li>
-        </ol> 
-        <form>
-            <input type="text" placeholder="=Enter your name">
-            <input type="text" placeholder="=Enter your name">
-            <input type="text" placeholder="=Enter your name">
-            <input type="text" placeholder="=Enter your name">
-            <button type="Submit">Submit</button>
-        </form>
-        <div class="devision1">
-            <h1>This is a devision 1</h1>
-        </div>
-    </body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Video Card with Like Image</title>
+  <style>
+    /* CSS styles here */
+    .video-card {
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+
+    .video-container {
+      position: relative;
+    }
+
+
+    .video-container iframe {
+      width: 100%;
+      height: auto;
+    }
+
+
+    .content {
+      padding: 10px;
+      position: relative;
+    }
+
+
+    h2 {
+      margin-top: 0;
+    }
+
+
+    .like-image {
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+
+
+    .like-dialog {
+      display: none;
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 4px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="video-card">
+    <div class="video-container">
+      <!-- Embed your video here -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/jCD1JkDp_BQ?si=TW12TuNk8eVRK_9n" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="content">
+      <h2>Bosscoder Academy</h2>
+      <div class="like-dialog">I like this</div>
+      <!-- thumbs-up image -->
+      <img class="like-image" id ="like"  src="like.png" alt="Thumbs Up">
+    </div>
+  </div>
+
+
+  <script>
+    // JavaScript code here
+   
+    let clickCount = 0;
+  const blackThumbsUp = document.getElementById('like');
+
+  document.getElementById('like').addEventListener('click', function() {
+    clickCount++;
+    if (clickCount % 2 === 1) {
+      blackThumbsUp.style.display = 'block';
+    } else {
+      blackThumbsUp.style.display = 'default';
+    }
+  });
+  </script>
+</body>
+
+
 </html>
